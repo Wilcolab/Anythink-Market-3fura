@@ -70,36 +70,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const MainView = (props) => {
-  if (props.itemCount > 0) {
-    return (
-      <div>
-        <div className="feed-toggle">
-          <ul className="nav nav-tabs">
-            <YourFeedTab
-              token={props.token}
-              tab={props.tab}
-              onTabClick={props.onTabClick}
-            />
-
-            <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
-
-            <TagFilterTab tag={props.tag} />
-          </ul>
-        </div>
-
-        <ItemList
-          pager={props.pager}
-          items={props.items}
-          loading={props.loading}
-          itemsCount={props.itemsCount}
-          currentPage={props.currentPage}
-        />
-      </div>
-    );
-  } else {
+  if (props.searchTriggered && props.itemsCount === 0) {
     return (
       <div className="container page">
-        <div id="empty" className="text-center p-4 noResult">
+        <div className="text-center p-4 noResult">
           <div className="mb-1">
             <svg
               height="50px"
@@ -113,11 +87,33 @@ const MainView = (props) => {
               />
             </svg>
           </div>
-          <span>
-            {" "}
+          <span id="empty">
             No items found for "<b>{props.searchTerm}</b>".
           </span>
         </div>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <div className="feed-toggle">
+          <ul className="nav nav-tabs">
+            <YourFeedTab
+              token={props.token}
+              tab={props.tab}
+              onTabClick={props.onTabClick}
+            />
+            <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
+            <TagFilterTab tag={props.tag} />
+          </ul>
+        </div>
+        <ItemList
+          pager={props.pager}
+          items={props.items}
+          loading={props.loading}
+          itemsCount={props.itemsCount}
+          currentPage={props.currentPage}
+        />
       </div>
     );
   }

@@ -10,6 +10,7 @@ const mapDispatchToProps = (dispatch) => ({
       type: SEARCH_BY_TITLE,
       payload: agent.Items.byTitle(term, 1),
       searchTerm: term,
+      searchTriggered: true,
     }),
 });
 const Banner = (props) => {
@@ -18,7 +19,7 @@ const Banner = (props) => {
     console.log(ev.target.value);
     if (ev.target.value.length >= 3) {
       props.search(ev.target.value);
-    } else {
+    } else if (ev.target.value.length === 0) {
       props.search("");
     }
   };

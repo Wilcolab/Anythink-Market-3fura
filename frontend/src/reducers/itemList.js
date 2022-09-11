@@ -88,6 +88,7 @@ const reducer = (state = {}, action) => {
         itemsCount: action.payload.itemsCount,
         currentPage: 0,
         searchTerm: action.searchTerm,
+        searchTriggered: action.searchTriggered,
       };
     default:
       return state;
