@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../imgs/logo.png";
 import agentObj from "../../agent";
 import { connect } from "react-redux";
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const Banner = (props) => {
-  const [showSearch, setShowSearch] = React.useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const handleChange = (ev) => {
     ev.preventDefault();
     console.log(ev.target.value);
