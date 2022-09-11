@@ -41,7 +41,7 @@ const Banner = (props) => {
               alt='search'
             />
           </span>
-          <span> the cool stuff.</span>
+          <span>the cool stuff.</span>
         </div>
       </div>
     </div>
