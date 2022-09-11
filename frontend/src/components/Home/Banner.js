@@ -31,9 +31,10 @@ const Banner = (props) => {
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div className="searchCover">
-          <span id="get-part">
+          <span>
             A place to{" "}
             <span
+              id="get-part"
               onClick={() => {
                 setShowSearch(true);
               }}
