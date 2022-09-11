@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../imgs/logo.png";
-import agent from "../../agent";
+import agentObj from '../../agent';
 import { connect } from "react-redux";
 import { SEARCH_BY_TITLE } from "../../constants/actionTypes";
 
@@ -8,7 +8,7 @@ const mapDispatchToProps = (dispatch) => ({
   search: (term) =>
     dispatch({
       type: SEARCH_BY_TITLE,
-      payload: agent.Items.byTitle(term, 1),
+      payload: agentObj.Items.bythetitle(term, 1),
       searchTerm: term,
       searchTriggered: true,
     }),
@@ -20,7 +20,7 @@ const Banner = (props) => {
     console.log(ev.target.value);
     if (ev.target.value.length >= 3) {
       props.search(ev.target.value);
-    } else if (ev.target.value.length == 0) {
+    } else if (ev.target.value.length === 0) {
       props.search("");
     }
   };
