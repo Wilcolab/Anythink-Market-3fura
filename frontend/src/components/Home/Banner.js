@@ -13,22 +13,23 @@ const mapDispatchToProps = (dispatch) => ({
       searchTriggered: true,
     }),
 });
+
 const Banner = (props) => {
   const handleChange = (ev) => {
     ev.preventDefault();
     console.log(ev.target.value);
     if (ev.target.value.length >= 3) {
       props.search(ev.target.value);
-    } else if (ev.target.value.length === 0) {
+    } else if (ev.target.value.length == 0) {
       props.search("");
     }
   };
+
   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
-        <div>
-          <div className="searchCover"></div>
+        <div className="searchCover">
           <span id="get-part">A place to get</span>
           <span>
             <input
@@ -45,7 +46,7 @@ const Banner = (props) => {
               alt="search"
             />
           </span>
-          <span>the cool stuff.</span>
+          <span className="coolStuff"> the cool stuff.</span>
         </div>
       </div>
     </div>

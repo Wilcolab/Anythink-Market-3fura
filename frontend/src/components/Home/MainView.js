@@ -70,7 +70,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const MainView = (props) => {
-  if (props.searchTriggered && props.itemsCount === 0) {
+  //searchTriggered
+  if (props.searchTriggered && props.itemsCount == 0) {
     return (
       <div className="container page">
         <div className="text-center p-4 noResult">
@@ -103,10 +104,13 @@ const MainView = (props) => {
               tab={props.tab}
               onTabClick={props.onTabClick}
             />
+
             <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
+
             <TagFilterTab tag={props.tag} />
           </ul>
         </div>
+
         <ItemList
           pager={props.pager}
           items={props.items}
