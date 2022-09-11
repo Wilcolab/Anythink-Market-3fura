@@ -10,8 +10,7 @@ const mapDispatchToProps = (dispatch) => ({
       type: SEARCH_BY_TITLE,
       payload: agent.Items.byTitle(term, 1),
     }),
-});
-
+})
 const Banner = (props) => {
   const handleChange = (ev) => {
     ev.preventDefault();
@@ -39,9 +38,9 @@ const Banner = (props) => {
               height="25px"
               width="25px"
               src="https://static.thenounproject.com/png/101791-200.png"
+              alt='image for search'
             />
           </span>
-          
           <span> the cool stuff.</span>
         </div>
       </div>
