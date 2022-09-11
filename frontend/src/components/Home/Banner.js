@@ -15,6 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const Banner = (props) => {
+  const [showSearch, setShowSearch] = React.useState(false);
   const handleChange = (ev) => {
     ev.preventDefault();
     console.log(ev.target.value);
@@ -30,23 +31,37 @@ const Banner = (props) => {
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div className="searchCover">
-          <span id="get-part">A place to get</span>
-          <span>
-            <input
-              id="search-box"
-              placeholder="What is it that you truly desire?"
-              className="searchBox m-2"
-              onChange={handleChange}
-            ></input>
-            <img
-              className="magImage"
-              height="25px"
-              width="25px"
-              src="https://static.thenounproject.com/png/101791-200.png"
-              alt="search"
-            />
+          <span id="get-part">
+            A place to{" "}
+            <span
+              onClick={() => {
+                setShowSearch(true);
+              }}
+            >
+              get
+            </span>
           </span>
-          <span className="coolStuff"> the cool stuff.</span>
+          {showSearch && (
+            <span>
+              <span>
+                <input
+                  id="search-box"
+                  placeholder="What is it that you truly desire?"
+                  className="searchBox m-2"
+                  onChange={handleChange}
+                ></input>
+                <img
+                  className="magImage"
+                  height="25px"
+                  width="25px"
+                  src="https://static.thenounproject.com/png/101791-200.png"
+                  alt="search"
+                />
+              </span>
+              <span className="coolStuff"> the cool stuff.</span>
+            </span>
+          )}
+          {!showSearch && <span> the cool stuff.</span>}
         </div>
       </div>
     </div>
