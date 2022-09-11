@@ -59,3 +59,32 @@ body {
 .user-info {
   min-width: 800px;
 }
+.searchBox {
+  border-radius: 5px;
+  outline: none;
+  border: transparent;
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  padding-right: 35px;
+}
+
+.searchBox::placeholder {
+  font-size: 15px;
+  padding-bottom: 2px;
+  color: #d0d0d0;
+}
+
+.searchCover {
+  font-size: 24px;
+}
+
+.magImage {
+  position: relative;
+  right: 40px;
+  background-color: white;
+}
+
+.coolStuff {
+  margin-left: -28px;
+}
