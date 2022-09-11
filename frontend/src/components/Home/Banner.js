@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../imgs/logo.png";
-import agentObj from '../../agent';
+import agentObj from "../../agent";
 import { connect } from "react-redux";
 import { SEARCH_BY_TITLE } from "../../constants/actionTypes";
 
